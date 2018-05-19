@@ -43,6 +43,7 @@ public class VehicleInformationTest extends TestBase {
     private String sheetName = "Sheet1";
     private int timeoutSecs = 15;
     private String baseUrl = "https://www.gov.uk/get-vehicle-information-from-dvla";
+    private String inquiryPageUrl = "https://vehicleenquiry.service.gov.uk/";
 
     @Before
     public void setup() {
@@ -84,6 +85,7 @@ public class VehicleInformationTest extends TestBase {
                 continue;
             }
 
+            driver.get(baseUrl);
             assertTrue("Start button is not displayed", homepage.START_BUTTON.isDisplayed());
             homepage.clickOnStartButton();
 
@@ -115,8 +117,7 @@ public class VehicleInformationTest extends TestBase {
                 // Take a screenshot of output
                 captureScreen(rowNum);
 
-                // Navigate back to inquiry page for the next vehicle check
-                confirmationPage.navigate_back();
+                driver.get(inquiryPageUrl);
 
             }
         }

@@ -25,18 +25,10 @@ public class ConfirmationPage {
 	@FindBy(css = ".list-summary-item:nth-child(3)")
 	public WebElement VEHICLE_COLOUR;
 
-	@FindBy(css = "a.back-to-previous.link-back")
-	public WebElement NAVIGATE_BACK;
-
 
 	public ConfirmationPage(WebDriver driver, int timeoutInSecs) {
 		this.wait = new WebDriverWait(driver, timeoutInSecs);
 		PageFactory.initElements(driver, this);
-	}
-
-	public void navigate_back() {
-		wait.until(ExpectedConditions.visibilityOf(NAVIGATE_BACK));
-		NAVIGATE_BACK.click();
 	}
 
 
