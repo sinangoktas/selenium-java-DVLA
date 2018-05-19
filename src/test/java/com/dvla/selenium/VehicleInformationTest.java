@@ -69,7 +69,7 @@ public class VehicleInformationTest extends TestBase {
      */
 
     @Test
-    public void testVehicleInformation() throws IOException {
+    public void testVehicleInformation() throws Exception {
 
         // Retrieve the file
         FileService resource = new FileService(pathToFolder);
@@ -131,14 +131,14 @@ public class VehicleInformationTest extends TestBase {
         }
     }
 
-    private void verifyColour(int rowNum, int colNum) {
+    private void verifyColour(int rowNum, int colNum) throws Exception {
         String colourInFile = excelUtil.getCellData(rowNum, colNum);
         String colourOnPage = confirmationPage.VEHICLE_COLOUR.getText();
         assertTrue(colourOnPage + " does not match " + colourInFile,
                 colourOnPage.trim().contains(colourInFile.trim()));
     }
 
-    private void verifyMake(int rowNum, int colNum) {
+    private void verifyMake(int rowNum, int colNum) throws Exception {
         String makeOnFile = excelUtil.getCellData(rowNum, colNum);
         String makeOnPage = confirmationPage.VEHICLE_MAKE.getText();
         assertTrue(makeOnPage + " does not match " + makeOnFile,

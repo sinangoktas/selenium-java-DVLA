@@ -13,14 +13,10 @@ public class ExcelUtil {
     private  XSSFCell cell;
 
 
-    public  void setExcelFile(String path, String sheetName) {
-        try {
+    public  void setExcelFile(String path, String sheetName) throws Exception {
             FileInputStream ExcelFile = new FileInputStream(path);
             ExcelWBook = new XSSFWorkbook(ExcelFile);
             ExcelWSheet = ExcelWBook.getSheet(sheetName);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public  int getRowCount(String sheetName) {
@@ -28,14 +24,11 @@ public class ExcelUtil {
         return ExcelWSheet.getPhysicalNumberOfRows();
     }
 
-    public  String getCellData(int rowNum, int colNum) {
-        try {
+    public  String getCellData(int rowNum, int colNum) throws Exception {
             cell = ExcelWSheet.getRow(rowNum).getCell(colNum);
             String cellValue = cell.getStringCellValue();
             return cellValue;
-        } catch (Exception e) {
-            return "";
-        }
+
     }
 
 }
