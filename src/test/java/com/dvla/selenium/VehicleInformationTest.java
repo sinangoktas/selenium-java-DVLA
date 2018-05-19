@@ -81,7 +81,7 @@ public class VehicleInformationTest extends TestBase {
                 String fullFilePath = pathToFolder + "/" + fileInfo.getName();
                 excelUtil.setExcelFile(fullFilePath, sheetName);
             } else {
-                return;
+                continue;
             }
 
             assertTrue("Start button is not displayed", homepage.START_BUTTON.isDisplayed());
