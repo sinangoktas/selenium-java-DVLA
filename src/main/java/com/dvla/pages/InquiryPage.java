@@ -16,7 +16,7 @@ public class InquiryPage {
 
     private WebDriverWait wait;
 
-    @FindBy(css = "input.form-control[id='Vrm']")
+    @FindBy(css = "input#Vrm.form-control")
     public WebElement QUERY_TEXTAREA;
 
     @FindBy(css = "button[name='Continue']")

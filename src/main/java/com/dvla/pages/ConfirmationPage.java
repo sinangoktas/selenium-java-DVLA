@@ -25,7 +25,7 @@ public class ConfirmationPage {
 	@FindBy(css = ".list-summary-item:nth-child(3)")
 	public WebElement VEHICLE_COLOUR;
 
-	@FindBy(css = ".back-to-previous.link-back")
+	@FindBy(css = "a.back-to-previous.link-back")
 	public WebElement NAVIGATE_BACK;
 
 
