@@ -1,8 +1,9 @@
-# EXECUTION
+# Prerequisities
 
-Install Maven 3
+Java 1.7 or above
+Maven3
 
-Run chmod +x chromedriver under utilities/"your OS" directory
+# Execution
 
 Execute 'mvn compile test' in the project directory.
 
